@@ -1,2 +1,2 @@
-# Fundamentos_Programaci-n
+# Fundamentos_Programacion
 Repositorio de la materia
