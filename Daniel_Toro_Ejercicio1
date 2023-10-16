@@ -1,0 +1,41 @@
+import javax.swing.JOptionPane;
+
+public class materias {
+    public static void main(String[] args) {
+        
+        int NAlumnos, NMaterias;
+        
+        NAlumnos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de alumnos: "));
+
+        NMaterias = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de materias: "));
+
+        String[] nombresMaterias = new String[NMaterias];
+        double[][] calificaciones = new double[NAlumnos][NMaterias];
+        String[] nombresAlumnos = new String[NAlumnos];
+
+        for (int m = 0; m < NMaterias; m++) {
+            nombresMaterias[m] = JOptionPane.showInputDialog("Ingrese el nombre de la materia " + (m + 1) + ": ");
+        }
+
+        for (int n = 0; n < NAlumnos; n++) {
+            nombresAlumnos[n] = JOptionPane.showInputDialog("Ingrese el nombre del alumno " + (n + 1) + ": ");
+
+            for (int m = 0; m < NMaterias; m++) {
+                calificaciones[n][m] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la calificación para la materia " + nombresMaterias[m] + ": "));
+            }
+        }
+
+        double[] promMateria = new double[NMaterias];
+        for (int j = 0; j < NMaterias; j++) {
+            double suma = 0;
+            for (int i = 0; i < NAlumnos; i++) {
+                suma += calificaciones[i][j];
+            }
+            promMateria[j] = suma / NAlumnos;
+        }
+        
+        for (int j = 0; j < NMaterias; j++) {
+           JOptionPane.showMessageDialog(null,"La calificación promedio de  " + nombresMaterias[j] + "  es de:  " + promMateria[j]);
+        }
+    }
+} //DaniT0r0
