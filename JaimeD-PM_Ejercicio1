@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class Calificacion {
+
+    public static String Oracion(){
+        String Orc;
+        @SuppressWarnings("resource")
+        Scanner Tecl = new Scanner(System.in);
+        Orc=Tecl.nextLine();
+        return Orc;
+    }
+
+    public static int NumEntero(){
+        boolean Selec; int Num=0;
+        @SuppressWarnings("resource")
+        Scanner Tecl = new Scanner(System.in);
+        do{
+            try{
+                Num=Tecl.nextInt();
+                Selec=true;
+            }catch (Exception e){
+                System.out.println("Algo fue incorrecto, vuelva a ingresar el número entero\n");
+                Tecl.nextLine();
+                Selec=false;
+            }
+        }while(Selec!=true);
+        return Num;
+    }
+
+    public static void main(String[] args) {
+
+        int NumAlumn; int NumMat; int CalifT; double PromedA; int TCalifSalon=0; double PromedS;
+        System.out.println("\n¿Cuantos alumnos hay en el salón?\nv");
+        NumAlumn=NumEntero();
+        System.out.println("Ingresa la cantidad de materias\nv");
+        NumMat=NumEntero();
+        double[][] Calificacion = new double[NumAlumn][NumMat]; String[] NameAlumno = new String[NumAlumn]; String[] Materia = new String[NumMat]; int[] TCalifMat = new int[NumMat];
+        double[] PromedMat = new double[NumMat];
+        System.out.println("");
+
+        for (int NM=0; NM<NumMat; NM++){
+            System.out.println("¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬\nIngresa el nombre de la "+(NM+1)+"° materia:");
+            Materia[NM]=Oracion();
+        }
+        System.out.println("");
+
+        for (int NA=0; NA<NumAlumn; NA++){
+            System.out.println(">Ingresa el nombre del "+(NA+1)+"° alumno:");
+            NameAlumno[NA]=Oracion();
+            System.out.println("");
+            for (int NM=0; NM<NumMat; NM++){
+                System.out.println("- - - - - - - - - - - - - - - - - - - - - - -\nIngresa la calificacion del alumno "+NameAlumno[NA]+" en la materia "+Materia[NM]+":");
+                Calificacion[NA][NM]=NumEntero();
+            }
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - -\n");
+        }
+
+        for (int NA=0; NA<NumAlumn; NA++){
+            CalifT=0;
+            for (int NM=0; NM<NumMat; NM++){
+                CalifT+=Calificacion[NA][NM];
+            }
+            PromedA=CalifT/NumMat;
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - -\nEl promedio del alumno "+NameAlumno[NA]+" es "+PromedA+"\n- - - - - - - - - - - - - - - - - - - - - - -");
+        }
+
+        for (int NA=0; NA<NumAlumn; NA++){
+            for (int NM=0; NM<NumMat; NM++){
+                TCalifSalon+=Calificacion[NA][NM];
+            }
+        }
+        PromedS=TCalifSalon/(NumAlumn*NumMat);
+        System.out.println("\n^ ^ ^ ^ ^ ^ El promedio del salón es: "+PromedS+" ^ ^ ^ ^ ^ ^\n");
+
+        System.out.println("Promedio por materias: ");
+        for (int NM=0; NM<NumMat; NM++){
+            for (int NA=0; NA<NumAlumn; NA++){
+                TCalifMat[NM]+=Calificacion[NA][NM];
+            }
+            PromedMat[NM]=TCalifMat[NM]/NumAlumn;
+            System.out.println("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\nPromedio de la materia "+Materia[NM]+": "+PromedMat[NM]);
+        }
+        System.out.println("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~");
+    }
+}
