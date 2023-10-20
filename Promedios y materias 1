@@ -1,0 +1,39 @@
+package promedios.y.materias1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Luis Güemez
+ */
+public class PromediosYMaterias1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner teclado=new Scanner (System.in);
+        double Calificacion1,Calificacion2,Calificacion3,Calificacion4,Promedio;
+        String alumno;
+        String materia;
+        
+        System.out.println("Nombre del alumno");
+        alumno=teclado.nextLine()
+        System.out.println("Materia");
+        materia=teclado.nextLine()
+        System.out.println("Calificacion1");
+        Calificacion1=teclado.nextDouble();
+        System.out.println("Calificacion2");
+        Calificacion2=teclado.nextDouble();
+        System.out.println("Calificacion3");
+        Calificacion3=teclado.nextDouble();
+        System.out.println("Calificacion4");
+        Calificacion4=teclado.nextDouble();
+        promedio=(Calificacion1+Calificacion2+Calificacion3+Calificacion4)/4;
+        System.out.println("El promedio final del alumno; "+alumno+" en la materia de ; "+Materia+"Es de; "+promedio+ );
+        
+                
+        
+    }
+    
+}
