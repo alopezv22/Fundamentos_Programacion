@@ -1,0 +1,34 @@
+* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package promediar;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Angelou
+ */
+public class Promediar {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner teclado = new Scanner(System.in);
+        double calificacion1, calificacion2, calificacion3, promedio;
+        String alumno;
+        System.out.println("Nombre del alumno: ");
+        alumno = teclado.nextLine();
+        System.out.println("Calificacion Evaluacion 1");
+        calificacion1 = teclado.nextDouble();
+        System.out.println("Calificacion Evaluacion 2");
+        calificacion2 = teclado.nextDouble();
+        System.out.println("Calificacion Evaluacion 3");
+        calificacion3 = teclado.nextDouble();
+        promedio = (calificacion1 + calificacion2 + calificacion3) / 3;
+        System.out.println("El Promedio del alumno: " + alumno + " es de: " + promedio);
+    }
+
+}
