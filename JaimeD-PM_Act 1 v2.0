@@ -1,0 +1,201 @@
+import java.util.Scanner;
+
+public class Calificacion_V2 {
+
+    public static String Oracion(){
+        String Orc;
+        @SuppressWarnings("resource")
+        Scanner Tecl = new Scanner(System.in);
+        Orc=Tecl.nextLine();
+        return Orc;
+    }
+
+    public static int NumEntero(){
+        int Num=0;
+        @SuppressWarnings("resource")
+        Scanner Tecl = new Scanner(System.in);
+        while(true){
+            try{
+                Num=Tecl.nextInt();
+                break;
+            }catch (Exception e){
+                System.out.println("Algo fue incorrecto, vuelva a ingresar el número entero\n");
+                Tecl.nextLine(); 
+            }
+        }
+        return Num;
+    }
+
+    public static void main(String[] args) {
+        int NumAlumn; int NumMat; int CalifT; double PromedA; int TCalifSalon=0; double PromedS;
+        System.out.println("\n¿Cuantos alumnos hay en el salón?\nv");
+        NumAlumn=NumEntero();
+        System.out.println("Ingresa la cantidad de materias\nv");
+        NumMat=NumEntero();
+        double[][] Calificacion = new double[NumAlumn][NumMat]; String[] NameAlumno = new String[NumAlumn]; String[] Materia = new String[NumMat]; int[] TCalifMat = new int[NumMat];
+        double[] PromedMat = new double[NumMat];
+        System.out.println("");
+
+        for (int NM=0; NM<NumMat; NM++){
+            System.out.println("¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬\nIngresa el nombre de la "+(NM+1)+"° materia:");
+            Materia[NM]=Oracion();
+        }
+        System.out.println("");
+
+        System.out.println("+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + +\nLista de materias:\n");
+        while(true){
+            String OpcOut; int NumOpc;
+            for (int NM=0; NM<NumMat; NM++){
+                System.out.println((NM+1)+"° "+Materia[NM]);
+            }
+            System.out.println("\n¿Esta correcta la lista? y/n");
+            OpcOut=Oracion();
+            if (OpcOut.equals("y")){
+                break;
+            }else{
+                System.out.println("\nIngresa el número de la materia que quieres cambiar.");
+                while(true){
+                    NumOpc=NumEntero();
+                    if (NumOpc>0 & NumOpc<=NumMat){
+                        break;
+                    }else{
+                        System.out.println("El numero ingresado esta fuera de los parametros");
+                    }
+                }
+                System.out.println("\n> Cambiando la materia "+Materia[(NumOpc-1)]+" >\nv");
+                Materia[(NumOpc-1)]=Oracion();
+                System.out.println("");
+            }
+        }
+        System.out.println("+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + +\n\n");
+
+        for (int NA=0; NA<NumAlumn; NA++){
+            System.out.println(">Ingresa el nombre del "+(NA+1)+"° alumno:");
+            NameAlumno[NA]=Oracion();
+            System.out.println("");
+            for (int NM=0; NM<NumMat; NM++){
+                System.out.println("- - - - - - - - - - - - - - - - - - - - - - -\nIngresa la calificacion del alumno "+NameAlumno[NA]+" en la materia "+Materia[NM]+":");
+                Calificacion[NA][NM]=NumEntero();
+            }
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - -\n");
+        }
+
+        System.out.println("+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + +");
+        while(true){
+            System.out.println("Lista de alumnos con calificacion:");
+            for (int NA=0; NA<NumAlumn; NA++){
+                System.out.println("\n"+(NA+1)+"° "+NameAlumno[NA]+"\nCalificaciones:");
+                for (int NM=0; NM<NumMat; NM++){
+                    System.out.println(Materia[NM]+": "+Calificacion[NA][NM]);
+                }
+            }
+            String OpcOut; int NumOpc; int OpcM=0;
+            System.out.println("\n< < ¿Estan correctos los datos? y/n > >");
+            OpcOut=Oracion();
+            if (OpcOut.equals("n")){
+                System.out.println("\n- - - - - - Ingresando al menú - - - - - -");
+                do{
+                    while(true){
+                        System.out.print("\nMenú:\n1. Cambiar el nombre de un alumno\n2. Cambiar calificacion de un alumno\n3. Volver a ver la lista\n4. Salir del programa\n>");
+                        OpcM=NumEntero();
+                        if (OpcM>0 & OpcM<5){
+                            break;
+                        }else{
+                            System.out.println("Ingresa un número del 1 al 4");
+                        }
+                    }
+                    switch(OpcM){
+                        case 1->{
+                            System.out.println("\n< Ingresal el número del alumno que quieres cambiar >\nv");
+                            while(true){
+                                NumOpc=NumEntero();
+                                if (NumOpc>0){
+                                    if(NumOpc<=NumAlumn){
+                                        break;
+                                    }else{
+                                        System.out.println("El número tiene que ser menor o igual a "+NumAlumn);
+                                    }
+                                }else{
+                                    System.out.println("El número tiene que ser mayor a 0");
+                                }
+                            }
+                            System.out.println("\n< Cambiando "+NameAlumno[NumOpc-1]+" >\nv");
+                            NameAlumno[NumOpc-1]=Oracion();
+                        }
+                        case 2->{
+                            int Calif; String If;
+                            System.out.print("\n- Ingresa el número del alumno al que desea corregir sus calificaciones -\n>");
+                            NumOpc=NumEntero();
+                            while(true){
+                                    System.out.println("Calificaciones del alumno "+NameAlumno[NumOpc-1]);
+                                for (int NM=0; NM<NumMat; NM++){
+                                    System.out.println((NM+1)+"° "+Materia[NM]+": "+Calificacion[NumOpc-1][NM]);
+                                }
+                                while(true){
+                                    System.out.print("\n~ Ingrese el número de la calificacion que deseas corregir ~\n>");
+                                    Calif=NumEntero();
+                                    if (Calif>0){
+                                        if (Calif<=NumMat){
+                                            break;
+                                        }else{
+                                            System.out.println("El número debe ser menor o igual a "+NumMat);
+                                        }
+                                    }else{
+                                        System.out.println("El número debe ser mayor a 0");
+                                    }
+                                }
+                                System.out.println("\nMateria a corregir -> "+Materia[Calif-1]+": "+Calificacion[NumOpc-1][Calif-1]+"\nIngresa la nueva calificacion\nv");
+                                Calificacion[NumOpc-1][Calif-1]=NumEntero();
+                                System.err.println("\n¿Queda otra calificacion por corregir? y/n");
+                                If=Oracion();
+                                if(If.equals("n")){
+                                    break;
+                                }
+                            }
+                        }
+                        case 3->{
+                            System.out.println("Lista de alumnos con calificacion:\n");
+                            for (int NA=0; NA<NumAlumn; NA++){
+                                System.out.println("\n"+(NA+1)+"° "+NameAlumno[NA]+"\nCalificaciones:");
+                                for (int NM=0; NM<NumMat; NM++){
+                                    System.out.println(Materia[NM]+": "+Calificacion[NA][NM]);
+                                }
+                            }
+                        }
+                        case 4-> System.out.println("Salinedo del Menú");
+                }
+                }while(OpcM!=4);
+            }else{
+                break;
+            }
+        }
+        System.out.println("+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + +\n\n");
+
+        for (int NA=0; NA<NumAlumn; NA++){
+            CalifT=0;
+            for (int NM=0; NM<NumMat; NM++){
+                CalifT+=Calificacion[NA][NM];
+            }
+            PromedA=CalifT/NumMat;
+            System.out.println("- - - - - - - - - - - - - - - - - - - - - - -\nEl promedio del alumno "+NameAlumno[NA]+" es "+PromedA+"\n- - - - - - - - - - - - - - - - - - - - - - -");
+        }
+
+        for (int NA=0; NA<NumAlumn; NA++){
+            for (int NM=0; NM<NumMat; NM++){
+                TCalifSalon+=Calificacion[NA][NM];
+            }
+        }
+        PromedS=TCalifSalon/(NumAlumn*NumMat);
+        System.out.println("\n^ ^ ^ ^ ^ ^ El promedio del salón es: "+PromedS+" ^ ^ ^ ^ ^ ^\n");
+
+        System.out.println("Promedio por materias: ");
+        for (int NM=0; NM<NumMat; NM++){
+            for (int NA=0; NA<NumAlumn; NA++){
+                TCalifMat[NM]+=Calificacion[NA][NM];
+            }
+            PromedMat[NM]=TCalifMat[NM]/NumAlumn;
+            System.out.println("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\nPromedio de la materia "+Materia[NM]+": "+PromedMat[NM]);
+        }
+        System.out.println("~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~");
+    }
+}
