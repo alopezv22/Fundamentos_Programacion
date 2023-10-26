@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Ejercicio_switch {
     public static void main(String[] args) {
        
-        System.out.println("Ingresa el sueldo del trabajador");
+        System.out.println("Ingresa el sueldo del trabajador: ");
         Scanner scannerSueldo = new Scanner(System.in);
         double sueldo = scannerSueldo.nextDouble();
         double aumentoSueldo;
@@ -57,7 +57,7 @@ public class Ejercicio_switch {
                 double porcentajeAumento = scannerAumento.nextDouble();
                 aumento = sueldo * (porcentajeAumento / 100);
                 aumentoSueldo = aumento + sueldo;
-                System.out.println("El nuevo sueldo del trabajador para la categoria " + nombreCategoria + " es de: \n $" + aumentoSueldo);
+                System.out.println("El nuevo sueldo del trabajador para la categoria " + nombreCategoria + ", con un aumento del " + porcentajeAumento + "% es de: \n $" + aumentoSueldo);
                 break;   
             
             default:
