@@ -1,18 +1,1 @@
-public class MultiplosDeTres {
-
-    public static void main(String[] args) {
-        int numero = 1000;
-        int contador = 0;
-
-        do {
-            if (numero % 3 == 0) {
-                System.out.println(numero);
-                contador++;
-            }
-
-            numero++;
-        } while (numero <= 1500);
-
-        System.out.println("La cantidad de múltiplos de tres es: " + contador);
-    }
-}
+----
