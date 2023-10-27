@@ -3,7 +3,7 @@ package Daniel_Toro_Actividad_7;
 public class multiplos {
     public static void main(String[] args) {
 
-        int num_suma = 5, suma = 0,  numerador = 1;  // Comenzamos con el primer número impar
+        int num_suma = 5, suma = 0,  numerador = 1;
 
         while (num_suma<50){
             System.out.println("__________________________________________________________________________");
