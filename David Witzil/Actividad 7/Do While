@@ -1,0 +1,23 @@
+/*Do while
+ *Desarrolla un programa que permita mostrar los 20 primeros numeros naturales impares existentes, y calcule su promedio.
+*/
+public class DoWhile{
+    public static void main(String[] args){
+                int CantidadNumerosImpares = 20;
+                int sumaImpares = 0;
+                int numero = 1;
+                
+                System.out.println(CantidadNumerosImpares);
+                
+                do {
+                    System.out.print(numero + " ");
+                    sumaImpares += numero;
+                    numero += 2;
+                    CantidadNumerosImpares--;
+                } while (CantidadNumerosImpares > 0);
+                
+                double promedio = (double) sumaImpares / 20;
+                
+                System.out.println("el promedio es, " + promedio);
+            }
+        }
