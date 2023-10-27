@@ -3,7 +3,7 @@ package Daniel_Toro_Actividad_7;
 public class  numerosnaturales{
     public static void main(String[] args) {
 
-        int num_suma = 1, suma = 0, cont_terminos = 0, numerador = 1;  // Comenzamos con el primer número impar
+        int num_suma = 1, suma = 0, cont_terminos = 0, numerador = 1;
 
         do {
             System.out.println("__________________________________________________________________________");
