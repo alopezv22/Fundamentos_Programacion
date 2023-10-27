@@ -1,0 +1,42 @@
+/*Leer la categoría y sueldo de un trabajador y calcular el aumento correspondiente de acuerdo a la tabla adjunta. Mostrar el sueldo incrementado del trabajado. */
+
+import java.util.Scanner;
+
+public class Switch{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese la categoría del trabajador (A, B, C, o D): ");
+        char categoria = scanner.next().charAt(0);
+        
+        System.out.print("Ingrese el sueldo del trabajador: ");
+        double sueldo = scanner.nextDouble();
+        
+        double aumento = 0.0;
+        
+        switch (categoria) {
+            case 'A':
+                aumento = sueldo * 0.18;
+                break;
+            case 'B':
+                aumento = sueldo * 0.12;
+                break;
+            case 'C':
+                aumento = sueldo * 0.09;
+                break;
+            case 'D':
+                aumento = sueldo * 0.06;
+                break;
+            default:
+                System.out.println("Categoría no válida");
+                System.exit(0);
+        }
+        
+        double sueldoIncrementado = sueldo + aumento;
+        
+        System.out.println("El aumento es de: $" + aumento);
+        System.out.println("El sueldo incrementado es: $" + sueldoIncrementado);
+        
+        scanner.close();
+    }
+}
