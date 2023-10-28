@@ -1,4 +1,3 @@
-Ejercicio con Do While:
 public class NumerosImparesPromedioDoWhile {
     public static void main(String[] args) {
         int n = 20; // Número de números impares a mostrar
