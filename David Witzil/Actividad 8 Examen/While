@@ -1,0 +1,25 @@
+/*Calcular y mostrar los números enteros cuadrados perfectos mayores que cero y menores
+a un número ingresado por teclado.*/
+
+import java.util.Scanner;
+
+public class WhileExamen {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese un número: ");
+        int numeroLimite = scanner.nextInt();
+        
+        int numero = 1;
+        
+        System.out.println("Números enteros cuadrados perfectos menores que " + numeroLimite + ":");
+        
+        while (numero * numero < numeroLimite) {
+            int cuadrado = numero * numero;
+            System.out.println(cuadrado);
+            numero++;
+        }
+        
+        scanner.close();
+    }
+}
