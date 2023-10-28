@@ -4,28 +4,29 @@ import java.util.ArrayList;
 public class Ejercicio_for {
 
     public static void main(String[] args) {
-        ArrayList<Integer> lista_numeros = new ArrayList<>();
+        ArrayList<Long> lista_numeros = new ArrayList<>();
         int contadorPares = 0;
         int contadorCeros = 0;
         int contadorNegativos = 0;
         
        Scanner scannerNumero = new Scanner(System.in);
        System.out.println("Ingresa 20 numeros enteros uno por uno: ");
-       for (int contadorGeneral = 1; contadorGeneral <= 20 ; contadorGeneral ++){
-        int numero = scannerNumero.nextInt();
+       for (int contadorGeneral = 1; contadorGeneral <= 4 ; contadorGeneral ++){
+        long numero = scannerNumero.nextLong();
         lista_numeros.add(numero);
        
             if ((numero % 2)== 0){
                 contadorPares ++;
             }
-            if ((numero % 10) == 0){
-                while ((numero % 10) == 0){
-                    contadorCeros++;
-                    numero /= 10;
-                }
-            }
+ 
             if (numero < 0){
                 contadorNegativos ++;
+            }
+            while (numero != 0){
+                if ((numero % 10) == 0){
+                    contadorCeros ++;
+                }
+                numero /= 10;
             }
         }   
        System.out.println("Los numeros que ingresaste son: " + lista_numeros);
@@ -34,5 +35,4 @@ public class Ejercicio_for {
        System.out.println("La cantidad de numeros negativos es de: " + contadorNegativos);
 }
 }        
-    
 
