@@ -1,0 +1,112 @@
+Ejercicio con Do While:
+public class NumerosImparesPromedioDoWhile {
+    public static void main(String[] args) {
+        int n = 20; // Número de números impares a mostrar
+        int suma = 0; // Variable para almacenar la suma de los números impares
+        int i = 1; // Inicializamos i en 1
+
+        System.out.println("Los primeros " + n + " números naturales impares son:");
+
+        do {
+            int numeroImpar = 2 * i - 1;
+            System.out.print(numeroImpar + " ");
+            suma += numeroImpar;
+            i++;
+        } while (i <= n);
+
+        double promedio = (double) suma / n;
+        System.out.println("\nEl promedio de los " + n + " números naturales impares es: " + promedio);
+    }
+}
+
+Ejercicio con While:
+public class SumaMultiplosDe5 {
+    public static void main(String[] args) {
+        int limite = 50; // Establecemos el límite (menor a 50)
+        int suma = 0; // Variable para almacenar la suma
+        int numero = 5; // Inicializamos con el primer múltiplo de 5
+
+        System.out.println("Los múltiplos de 5 menores a " + limite + " son:");
+
+        while (numero < limite) {
+            System.out.print(numero + " ");
+            suma += numero;
+            numero += 5; // Añadimos 5 para pasar al siguiente múltiplo
+        }
+
+        System.out.println("\nLa suma de los múltiplos de 5 es: " + suma);
+    }
+}
+
+Ejercicio con For
+import java.util.Scanner;
+
+public class ContarNumeros {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int cantidadPares = 0;
+        int cantidadCeros = 0;
+        int cantidadNegativos = 0;
+
+        System.out.println("Ingrese 20 números:");
+
+        for (int i = 0; i < 20; i++) {
+            System.out.print("Número #" + (i + 1) + ": ");
+            int numero = scanner.nextInt();
+
+            if (numero % 2 == 0) {
+                cantidadPares++;
+            }
+
+            if (numero == 0) {
+                cantidadCeros++;
+            }
+
+            if (numero < 0) {
+                cantidadNegativos++;
+            }
+        }
+
+        System.out.println("Cantidad de números pares: " + cantidadPares);
+        System.out.println("Cantidad de ceros: " + cantidadCeros);
+        System.out.println("Cantidad de números negativos: " + cantidadNegativos);
+    }
+}
+
+Ejercicio con Switch
+import java.util.Scanner;
+
+public class CalculoAumentoSueldo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double sueldo, sueldoIncrementado;
+        String categoria;
+
+        System.out.print("Ingrese la categoría del trabajador (A, B, C o D): ");
+        categoria = scanner.next().toUpperCase();
+
+        System.out.print("Ingrese el sueldo del trabajador: ");
+        sueldo = scanner.nextDouble();
+
+        switch (categoria) {
+            case "A":
+                sueldoIncrementado = sueldo + (sueldo * 0.18);
+                break;
+            case "B":
+                sueldoIncrementado = sueldo + (sueldo * 0.12);
+                break;
+            case "C":
+                sueldoIncrementado = sueldo + (sueldo * 0.09);
+                break;
+            case "D":
+                sueldoIncrementado = sueldo + (sueldo * 0.06);
+                break;
+            default:
+                System.out.println("Categoría no válida.");
+                return; // Salir del programa si la categoría no es válida
+        }
+
+        System.out.println("El sueldo incrementado del trabajador es: " + sueldoIncrementado);
+    }
+}
+
