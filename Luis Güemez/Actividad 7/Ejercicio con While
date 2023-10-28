@@ -1,0 +1,17 @@
+public class SumaMultiplosDe5 {
+    public static void main(String[] args) {
+        int limite = 50; // Establecemos el límite (menor a 50)
+        int suma = 0; // Variable para almacenar la suma
+        int numero = 5; // Inicializamos con el primer múltiplo de 5
+
+        System.out.println("Los múltiplos de 5 menores a " + limite + " son:");
+
+        while (numero < limite) {
+            System.out.print(numero + " ");
+            suma += numero;
+            numero += 5; // Añadimos 5 para pasar al siguiente múltiplo
+        }
+
+        System.out.println("\nLa suma de los múltiplos de 5 es: " + suma);
+    }
+}
