@@ -1,0 +1,50 @@
+/*Calcule y muestre el monto total a pagar por un desayuno, sabiendo que,
+adicionalmente hay que pagar el 5% por el servicio y 2% por propinas.
+Si se ingresa otro tipo de desayuno considerar costo = 0 y mostrar un mensaje de error.*/
+
+import java.util.Scanner;
+
+public class SwitchExamen {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Tipos de desayuno:");
+        System.out.println("1 = Moderado ($45)");
+        System.out.println("2 = Mediano ($50)");
+        System.out.println("3 = Extra grande ($75)");
+        System.out.println("4 = Full ($120)");
+        System.out.print("Ingrese el tipo de desayuno (1-4): ");
+        
+        int tipoDesayuno = scanner.nextInt();
+        double costo = 0;
+
+        switch (tipoDesayuno) {
+            case 1:
+                costo = 45;
+                break;
+            case 2:
+                costo = 50;
+                break;
+            case 3:
+                costo = 75;
+                break;
+            case 4:
+                costo = 120;
+                break;
+            default:
+                System.out.println("Tipo de desayuno no válido. Por favor, elija un tipo válido (1-4).");
+                scanner.close();
+        }
+
+        double servicio = costo * 0.05;
+        double propinas = costo * 0.02;
+        double montoTotal = costo + servicio + propinas;
+
+        System.out.println("Costo del desayuno: $" + costo);
+        System.out.println("Costo del servicio (5%): $" + servicio);
+        System.out.println("Propinas (2%): $" + propinas);
+        System.out.println("Monto total a pagar: $" + montoTotal);
+
+        scanner.close();
+    }
+}
