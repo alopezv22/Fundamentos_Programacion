@@ -1,0 +1,28 @@
+/*Determinar y mostrar los términos de una progresión aritmética.
+Ingrese el valor del primer término, el valor de la razón y el número de términos que tiene la progresión. */
+
+import java.util.Scanner;
+
+public class ForExamen {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el primer término: ");
+        double primerTermino = scanner.nextDouble();
+
+        System.out.print("Ingrese la razón: ");
+        double razon = scanner.nextDouble();
+
+        System.out.print("Ingrese el número de términos: ");
+        int numeroTerminos = scanner.nextInt();
+
+        System.out.println("Términos de la progresión aritmética:");
+
+        for (int i = 0; i < numeroTerminos; i++) {
+            double termino = primerTermino + i * razon;
+            System.out.println("Término " + (i + 1) + ": " + termino);
+        }
+
+        scanner.close();
+    }
+}
