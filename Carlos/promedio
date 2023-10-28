@@ -1,0 +1,51 @@
+package calcular_materia_promedio_nombre;
+
+import java.util.Scanner;
+public class Calcular_materia_promedio_nombre {
+    public static void main(String[] args) {
+        Scanner Materia = new Scanner(System.in);
+    System.out.println("BIENVENIDO A LA UNIVERSIDAD DEL SUR");
+    System.out.print("Ingresa nombre del Alumno: ");
+     String alumno = Materia.next();          
+          System.out.print("Calificacion de Matematicas, 1 parcial: ");
+           int Matematicas = Materia.nextInt();
+           System.out.print("Calificacion de Matematicas, 2 Parcial: ");
+            int Matematicas2 = Materia.nextInt();
+            System.out.print("Calificacion de Programacion, 1 parcial: ");
+                int Programacion = Materia.nextInt();
+                System.out.print("Calificacion de Programacion, 2 parcial: ");
+                    int Programacion2 = Materia.nextInt();
+                    System.out.print("Calificacion de lectura, 1 parcial: ");
+                
+         int Lectura = Materia.nextInt();
+         System.out.print("Calificacion de lectura, 2 parcial: ");
+        int Lectura2 = Materia.nextInt();
+        long Promedio = 0, Promedio2 = 0, Promedio3 = 0;
+        long General = 0;
+        Promedio = (Matematicas +Matematicas2) / 2;
+        Promedio2 = (Programacion + Programacion2) / 2;
+        Promedio3 = (Lectura + Lectura2) / 2;
+        General =( Promedio + Promedio2 + Promedio3) / 3;
+            System.out.println("Universidad Del Sur, Calificaciones");
+            System.out.println("Sus calificaciones de: " + alumno);
+            if (Promedio >= 6){                
+            System.out.println("Aprobaste la Asignatura de Matematicas con: " + Promedio);
+            }else {
+            System.out.println("El alumno Reprobo Matematicas con: " + Promedio);          
+            }
+               if(Promedio2 >= 6){
+               System.out.println("Aprobaste la Asignatura de Programacion con: " + Promedio2);
+               }else {
+               System.out.println("El alumno Reprobo Programacion con: " + Promedio2);
+               }
+                    if(Promedio2 >= 6) {                           
+                    System.out.println("Aprobaste la Asignatura de lectura con: " + Promedio3);
+                    }else {
+                    System.out.println("El alumno Reprobo Lectura con: " + Promedio3);
+                    }
+                       System.out.println("El promedio de la Licenciatura es: " + General);
+                       if(General >= 8) {
+                       System.out.println("Felicidades por su Buen desempeño :3");
+                       }
+    } 
+}
