@@ -1,0 +1,116 @@
+package impar;
+
+public class Impar {
+
+    public static void main(String[] args) {
+       int i = 1;
+        int sum = 0;
+        int count = 0;
+
+        do {
+            if(i % 2 != 0) {
+                System.out.print("," + i);
+                sum += i;
+                count++;
+            }
+            i++;
+        } while (count < 20);
+        System.out.println("");
+        System.out.println("El promedio de los primeros 20 números naturales impares es: " + ((double) sum / count));
+    }
+    
+}
+________________________________________________________________________________________________________________________
+ 
+  package impar;
+
+import java.util.Scanner;
+
+
+public class Negativos {
+       public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int countPares = 0;
+        int countCeros = 0;
+        int countNegativos = 0;
+
+        for (int i = 0; i < 20; i++) {
+            System.out.println("Ingrese el número " + (i+1) + ":");
+            int num = scanner.nextInt();
+
+            if(num == 0) {
+                countCeros++;
+            } else if(num < 0) {
+                countNegativos++;
+            } else if(num % 2 == 0) {
+                countPares++;
+            }
+        }
+
+        System.out.println("Cantidad de números pares: " + countPares);
+        System.out.println("Cantidad de ceros: " + countCeros);
+        System.out.println("Cantidad de números negativos: " + countNegativos);
+    }
+}
+_______________________________________________________________________________________
+
+  package impar;
+
+
+public class Numeros {
+    public static void main (String[] args) {
+             int i = 0;
+     
+
+        while (i < 50) {
+            i++;
+            if(i%5==0) {
+               System.out.print("," + i); 
+            }
+            
+        }
+         
+    }
+
+  _______________________________________________________________________________________
+
+    package impar;
+
+import java.util.Scanner;
+
+public class sueldos {
+     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("A= 1(18%), B= 2(12%), C= 3(9%), D= 4(6%).. Categorias...");
+        System.out.println("___________________________________________________"); 
+        System.out.println("Ingrese la categoría del trabajador:");
+        int categoria = scanner.nextInt();
+
+        System.out.println("Ingrese el sueldo del trabajador:");
+        double sueldo = scanner.nextDouble();
+
+        double aumento = 0;
+
+        switch (categoria) {
+            case 1:                
+                aumento = sueldo * 0.18;
+                break;
+            case 2:
+                aumento = sueldo * 0.12;
+                break;
+            case 3:
+                aumento = sueldo * 0.09;
+                break;
+            case 4:
+                aumento = sueldo * 0.06;
+                break;
+            default:
+                System.out.println("Categoría no válida.");
+                return;
+        }
+
+        double sueldoIncrementado = sueldo + aumento;
+
+        System.out.println("El sueldo incrementado del trabajador es: " + sueldoIncrementado);
+    }
+}
