@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class CalculoAumentoSueldo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double sueldo, sueldoIncrementado;
+        String categoria;
+
+        System.out.print("Ingrese la categoría del trabajador (A, B, C o D): ");
+        categoria = scanner.next().toUpperCase();
+
+        System.out.print("Ingrese el sueldo del trabajador: ");
+        sueldo = scanner.nextDouble();
+
+        switch (categoria) {
+            case "A":
+                sueldoIncrementado = sueldo + (sueldo * 0.18);
+                break;
+            case "B":
+                sueldoIncrementado = sueldo + (sueldo * 0.12);
+                break;
+            case "C":
+                sueldoIncrementado = sueldo + (sueldo * 0.09);
+                break;
+            case "D":
+                sueldoIncrementado = sueldo + (sueldo * 0.06);
+                break;
+            default:
+                System.out.println("Categoría no válida.");
+                return; // Salir del programa si la categoría no es válida
+        }
+
+        System.out.println("El sueldo incrementado del trabajador es: " + sueldoIncrementado);
+    }
+}
