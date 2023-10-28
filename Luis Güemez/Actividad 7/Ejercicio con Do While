@@ -1,0 +1,39 @@
+Ejercicio con Do While:
+public class NumerosImparesPromedioDoWhile {
+    public static void main(String[] args) {
+        int n = 20; // Número de números impares a mostrar
+        int suma = 0; // Variable para almacenar la suma de los números impares
+        int i = 1; // Inicializamos i en 1
+
+        System.out.println("Los primeros " + n + " números naturales impares son:");
+
+        do {
+            int numeroImpar = 2 * i - 1;
+            System.out.print(numeroImpar + " ");
+            suma += numeroImpar;
+            i++;
+        } while (i <= n);
+
+        double promedio = (double) suma / n;
+        System.out.println("\nEl promedio de los " + n + " números naturales impares es: " + promedio);
+    }
+}
+
+Ejercicio con While:
+public class SumaMultiplosDe5 {
+    public static void main(String[] args) {
+        int limite = 50; // Establecemos el límite (menor a 50)
+        int suma = 0; // Variable para almacenar la suma
+        int numero = 5; // Inicializamos con el primer múltiplo de 5
+
+        System.out.println("Los múltiplos de 5 menores a " + limite + " son:");
+
+        while (numero < limite) {
+            System.out.print(numero + " ");
+            suma += numero;
+            numero += 5; // Añadimos 5 para pasar al siguiente múltiplo
+        }
+
+        System.out.println("\nLa suma de los múltiplos de 5 es: " + suma);
+    }
+}
