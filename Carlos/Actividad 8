@@ -1,0 +1,171 @@
+package actividad_8;
+
+public class multiplos {
+
+    public static void main(String[] args) {
+      int conteo = 0;
+        System.out.println("Los múltiplos de 3, entre 1000 y 1500 son:");
+        for (int i = 1000; i <= 1500; i++) {
+            if (i % 3 == 0) {
+                
+                System.out.println(i);
+                conteo++;
+            }
+        }
+        System.out.println("La cantidad de múltiplos de 3 son: " + conteo);
+    }  
+}
+
+__________________________________________________________________________________
+
+package actividad_8;
+
+import java.util.Scanner;
+
+
+public class perfectos {
+    public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+        System.out.print("Por favor, ingrese un número:");
+        int num = scanner.nextInt();
+        int i = 2;
+        while (i * i < num) {
+            System.out.println(i * i);
+            i++;
+        }
+        scanner.close();
+    }
+}
+_____________________________________________________________________________________
+
+package actividad_8;
+
+import java.util.Scanner;
+
+
+public class Progresion {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+      
+        System.out.print("Ingrese un numero de inicio:");
+        int Inicio = scanner.nextInt();
+
+        System.out.print("Ingrese el numero de la suma:");
+        int Suma = scanner.nextInt();
+
+        System.out.print("Ingrese el numero limite de la progresion:");
+        int Limite = scanner.nextInt();
+        int cont =0;
+        System.out.println("Resultado de la Progresion Aritmética:");
+        for (int i = 0; i < Limite; i++) {
+            int terminoActual = Inicio + i * Suma;            
+            System.out.println(terminoActual);
+            cont += terminoActual;            
+            
+        }
+        System.out.println("suma de los numeros: " + cont);
+        scanner.close();
+    }
+
+}
+________________________________________________________________________________
+
+
+package actividad_8;
+
+import java.util.Scanner;
+
+public class desayunos {
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+        System.out.println("Bienvenido al menu de Desayunos de la cafeteria");
+        System.out.println("Chico (1), Mediano (2), Grande (3), ExtraGrande (4)");
+        System.out.print("Por favor, ingrese el numero del desayuno: ");
+        int valor = scanner.nextInt();
+        double n;
+        switch (valor) {
+            case 1:
+                System.out.println("Desayuno chico costo: $45 pesos");
+                n = 45;
+                System.out.println("Servicio $2.25 pesos");
+                System.out.println("propina $0.9 pesos");
+                break;
+            case 2:
+                System.out.println("Desayuno mediano costo: $50 pesos");
+                n = 50;
+                System.out.println("Servicio $2.5 pesos");
+                System.out.println("propina $1 pesos");
+                break;
+            case 3:
+                System.out.println("Desayuno grande costo: $75 pesos");
+                n = 75;
+                System.out.println("Servicio $3.75 pesos");
+                System.out.println("propina $1.5 pesos");
+                break;
+            case 4:
+                System.out.println("Desayuno extraGrande costo: $120 pesos");
+                n = 120;
+                System.out.println("Servicio $6 pesos");
+                System.out.println("propina $2.4 pesos");
+                break;
+            default:
+                System.out.println("No selecciono su desayuno");
+                n = 0;
+        }
+        double Servicio = n * 0.05; 
+        double Propina = n * 0.02;
+        double totalCosto = n + Servicio + Propina;
+        System.out.println("El monto total a pagar es: $" + totalCosto);
+        
+        scanner.close();
+        
+    }
+}
+____________________________________________________________________________________
+
+package actividad_8;
+
+import java.util.Scanner;
+
+public class banco_1 {
+
+    public static void main(String[] args) {
+        double saldo_inicial=1000;
+    int opcion;
+    double ingreso,saldoActual,retiro;
+    Scanner entrada=new Scanner(System.in);
+    
+    while(true){
+        System.out.println("1. Ingresar dinero a la cuenta");
+        System.out.println("2. Retirar dinero de la cuenta.");
+        System.out.println("3. Salir"); 
+        
+        System.out.print("Ingresar un numero:");
+        opcion=entrada.nextInt();
+
+        switch(opcion){
+            case 1 :
+                System.out.println("Digite la cantidad que desea ingresar en la cuenta: ");
+                ingreso=entrada.nextDouble();
+                saldo_inicial=saldo_inicial+ingreso;
+                System.out.println("El saldo Actual es: " + saldo_inicial);
+                break;
+                
+            case 2 :
+                System.out.print("Digite la cantidad que desea retirar: ");
+                retiro=entrada.nextDouble();
+                if(retiro<=saldo_inicial){
+                    saldo_inicial=saldo_inicial-retiro;
+                    System.out.println("Dinero en cuenta: "+saldo_inicial);
+                }
+                else{
+                    System.out.println("No cuenta con el saldo suficiente");
+                }
+                break;
+             
+            case 3:
+                System.exit(0);
+            }
+        }    
+    }
+}
