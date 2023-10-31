@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Dulceria {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Selecciona el tipo de desayuno:");
+        System.out.println("1 = Moderado ($45)");
+        System.out.println("2 = Mediano ($50)");
+        System.out.println("3 = Extra Grande ($75)");
+        System.out.println("4 = Full ($120)");
+
+        int tipoDesayuno = scanner.nextInt();
+        double costo = 0;
+
+        switch (tipoDesayuno) {
+            case 1:
+                costo = 45;
+                break;
+            case 2:
+                costo = 50;
+                break;
+            case 3:
+                costo = 75;
+                break;
+            case 4:
+                costo = 120;
+                break;
+            default:
+                System.out.println("Tipo de desayuno no válido. Costo = $0");
+                break;
+        }
+
+        if (costo > 0) {
+            double servicio = costo * 0.05;
+            double propinas = costo * 0.02;
+            double montoTotal = costo + servicio + propinas;
+
+            System.out.println("Monto del desayuno: $" + costo);
+            System.out.println("Servicio (5%): $" + servicio);
+            System.out.println("Propinas (2%): $" + propinas);
+            System.out.println("Monto total a pagar: $" + montoTotal);
+        } else {
+            System.out.println("No se ha seleccionado un desayuno válido.");
+        }
+
+        scanner.close();
+    }
+}
