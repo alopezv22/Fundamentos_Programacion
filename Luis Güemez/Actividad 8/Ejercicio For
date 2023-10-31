@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class ProgresionAritmetica {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa el valor del primer término: ");
+        int primerTermino = scanner.nextInt();
+
+        System.out.print("Ingresa el valor de la razón: ");
+        int razon = scanner.nextInt();
+
+        System.out.print("Ingresa el número de términos: ");
+        int numeroTerminos = scanner.nextInt();
+
+        scanner.close();
+
+        System.out.println("Los términos de la progresión aritmética son:");
+
+        for (int i = 0; i < numeroTerminos; i++) {
+            int termino = primerTermino + (i * razon);
+            System.out.println(termino);
+        }
+    }
+}
